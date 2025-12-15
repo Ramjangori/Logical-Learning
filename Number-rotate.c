@@ -19,11 +19,25 @@ int main(){
 
     }
     p = p/10;
-   while(k>0){
-    int rem = nn%10;
+   while(k!=0){
+   	//   Number rotate in anticlock-wise
+   	if(k>0){
+   		int rem = nn%10;
     nn = nn/10;
     nn = nn + rem*p;
     k--;
+	   }
+	   
+	   // Number rotate in clock wise 
+	   if(k<0){
+	   	
+	   	int rem = nn%p;
+	   	int ls = nn/p;
+	   	
+	   	nn = rem*10 +ls;
+	   	k++;
+	   }
+    
    }
    printf("%d",nn);
 }
