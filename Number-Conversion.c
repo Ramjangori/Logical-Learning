@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main(){
 	int n;
-    int conversion;
+    
 	 printf("--Number Conversion System--\n");
 	 printf("Enter What Type Number you Will Enter..\n");
 	 printf("Press 1->Binary\nPress 2->Decimal\nPress 3->Octal\nPress 4->Hexadecimal\n");
@@ -53,7 +53,31 @@ int main(){
     printf("Octal is : %d",Octal);
         }
         if(m==3){
-
+          int bin , decimal=0 , pos=1;
+           printf("Enter Binary Number :");
+           scanf("%d",&bin);
+           while(bin>0){
+           decimal = decimal + (bin%10)*pos;
+             pos = pos*2;
+             bin = bin/10;
+             }
+             
+     int i=0;
+     char Hexa[100];
+     while(decimal>0){
+         int rem = decimal%16;
+         if(rem<10)  Hexa[i] = rem + 48;
+         else Hexa[i] = rem + 55;
+         i++;
+         decimal = decimal/16;
+     } 
+      printf("Hexadecimal is : ");
+       int j = i-1;
+         while(j>=0){
+            printf("%c",Hexa[j]);
+            if(j==0) break;
+            j--;
+    }
         }
      }
 	 else if(n==2){
@@ -90,7 +114,27 @@ int main(){
     }
     printf("Octal Number is %d :",octal);
         } 
-    
+        if(m==3){
+            int Num;
+     int i=0;
+     char Hexa[100];
+     printf("Enter Number : ");
+     scanf("%d",&Num);
+     while(Num>0){
+         int rem = Num%16;
+         if(rem<10)  Hexa[i] = rem + 48;
+         else Hexa[i] = rem + 55;
+         i++;
+         Num = Num/16;
+     }
+     printf("Hexadecimal is : ");
+    int j = i-1;
+    while(j>=0){
+        printf("%c",Hexa[j]);
+        if(j==0) break;
+        j--;
+    }
+        }
     }
      else if(n==3)	{
         int m;
@@ -130,6 +174,36 @@ int main(){
     } 
      printf("Decimal is %d :",decimal);
         }
+        if(m==3){
+             int Octal , decimal = 0 , up=1;
+          printf("Enter Octal num :");
+         scanf("%d",&Octal);
+       while(Octal>0){
+        int rem = Octal%10;
+        decimal = decimal + rem*up;
+        up = up*8;
+        Octal = Octal/10;
+    } 
+     // Now we convert Decimal to hexadecimal 
+     int i=0;
+     char Hexa[100];
+     while(decimal>0){
+         int rem = decimal%16;
+         if(rem<10)  Hexa[i] = rem + 48;
+         else Hexa[i] = rem + 55;
+         i++;
+         decimal = decimal/16;
+     }
+     printf("Hexadecimal is :");
+    int j = i-1;
+    while(j>=0){
+        printf("%c",Hexa[j]);
+        if(j==0) break;
+        j--;
+    }
+
+        }
+
 }
   return 0;
 }
