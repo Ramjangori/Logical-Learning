@@ -53,8 +53,30 @@ int main(){
     printf("Octal is : %d",Octal);
         }
         if(m==3){
-            
+
         }
      }
-	 	
+	 else if(n==2){
+        int m;
+        printf("Press 1->Binary\n Press 2->Octal\n Press 3-> Hexadecimal\n");
+        scanf("%d",&m);
+        if(m==1){
+            int num,binary=0;
+            int position=1;
+           printf("Enter number :");
+           scanf("%d",&num);
+    while(num>=1){
+        binary = binary + (num%2)*position;
+        position = position*10;
+        num = num/2;
+        
+    }
+ 
+    printf("Binary is %d :" , binary);
+        }
+        if(m==2){
+            
+        } 
+    
+    }	
 }
