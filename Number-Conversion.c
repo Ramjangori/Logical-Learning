@@ -3,10 +3,15 @@ int main(){
 	int n;
     
 	 printf("--Number Conversion System--\n");
+     printf("\n");
 	 printf("Enter What Type Number you Will Enter..\n");
 	 printf("Press 1->Binary\nPress 2->Decimal\nPress 3->Octal\nPress 4->Hexadecimal\n");
      scanf("%d",&n);
-
+    if(n<=4 ||n>=1){
+        printf("Please Enter a Valid Key ..");
+    }
+    else {
+        
      if(n==1){
         int m;
         printf("What Type Number You Want to Get..\n");
@@ -205,5 +210,111 @@ int main(){
         }
 
 }
-  return 0;
+     else if(n==4){
+         int m;
+         printf("Enter what type Number You Want ....\n");
+         printf("press 1-> Binary\nPress 2->Octal\nPress 3->Decimal\n");
+         scanf("%d",&m);
+         if(m==1){
+            // Hexadecimal to Decimal
+           char Hex[20] ;
+    int dec = 0, value;
+    printf("Enter Hexadecimal Number :");
+    scanf("%s",Hex);
+    int i=0;
+    while(Hex[i]!='\0'){
+        if(Hex[i]<='9' && Hex[i]>='0'){
+            value = Hex[i] - '0';
+        }
+        else if(Hex[i]>='A' && Hex[i]<='F'){
+            value = Hex[i]-'A' + 10;
+        }
+        else if(Hex[i]>='a' && Hex[i]<='f'){
+            value = Hex[i]-'a' + 10;
+        }
+       dec = dec * 16 + value;
+        i++;
+       
+    }
+     // Decimal to Binary 
+    int binary=0;
+    int position=1;
+    
+    while(dec>=1){
+        binary = binary + (dec%2)*position;
+        position = position*10;
+        dec = dec/2;
+        
+    }
+ 
+    printf("Binary is %d :" , binary);
+
+
+
+
+
+
+
+         }
+         // for hex to octal 
+         if(m==2){
+              char Hex[20] ;
+    int dec = 0, value;
+    printf("Enter Hexadecimal Number :");
+    scanf("%s",Hex);
+    int i=0;
+    while(Hex[i]!='\0'){
+        if(Hex[i]<='9' && Hex[i]>='0'){
+            value = Hex[i] - '0';
+        }
+        else if(Hex[i]>='A' && Hex[i]<='F'){
+            value = Hex[i]-'A' + 10;
+        }
+        else if(Hex[i]>='a' && Hex[i]<='f'){
+            value = Hex[i]-'a' + 10;
+        }
+       dec = dec * 16 + value;
+        i++;
+       
+    }
+     // decimal to Octal
+      int octal=0;
+       int up = 1;
+    while(dec>0){
+        int rem = dec%8;
+        octal = octal + rem*up;
+        up = up*10;
+        dec = dec/8;
+
+    }
+    printf("Octal Number is %d :",octal);
+
+         }
+         if(m==3){
+             char Hex[20] ;
+    int dec = 0, value;
+    printf("Enter Hexadecimal Number :");
+    scanf("%s",Hex);
+    int i=0;
+    while(Hex[i]!='\0'){
+        if(Hex[i]<='9' && Hex[i]>='0'){
+            value = Hex[i] - '0';
+        }
+        else if(Hex[i]>='A' && Hex[i]<='F'){
+            value = Hex[i]-'A' + 10;
+        }
+        else if(Hex[i]>='a' && Hex[i]<='f'){
+            value = Hex[i]-'a' + 10;
+        }
+       dec = dec * 16 + value;
+        i++;
+       
+    }
+    printf("Decimal Number is : %d",dec);
+     
+         }
+     }
+
+    }
+return 0;
 }
