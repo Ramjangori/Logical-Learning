@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main()
-{    
+{    // Binary to Octal conversion 
    int N,Octal=0;
    int OctalPlace=1;
     printf("Enter Binary Number : ");
